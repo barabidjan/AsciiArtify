@@ -34,4 +34,4 @@ AsciiArtify, a startup focused on developing a new software product for transfor
 
 
 
-[![k3d Demo](https://asciinema.org/a/gwmbcxL3smcfA7pyMjSpGikFw.svg)](https://asciinema.org/a/gwmbcxL3smcfA7pyMjSpGikFw)
+[![k3d Demo](https://asciinema.org/a/gwmbcxL3smcfA7pyMjSpGikFw.svg)]
