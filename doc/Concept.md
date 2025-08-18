@@ -31,7 +31,11 @@ AsciiArtify, a startup focused on developing a new software product for transfor
 - `Additional Features:` Chosen for preparing Proof of Concept (PoC).
 
 ### Characteristic
+| **Pros and Cons**                               | **Minikube**                                     | **Kind**                                         | **k3d**                                          |
+|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|--------------------------------------------------|
+| **Pros**                                      | + Easy to use<br>+ Suitable for local development and testing | + Suitable for local development and testing<br>+ Works within Docker containers<br>+ Possibility for local testing | + Suitable for local development and testing<br>+ Works within Docker containers<br>+ Fast cluster creation and testing | 
+| **Cons**                                      | - Doubts about scalability<br>- Potential limitations | - Limited information on scalability<br>- Limited community documentation | - Limited documentation<br>- Potential scalability concerns | 
 
-
+### Please see the k3d Demo:
 
 [![k3d Demo](https://asciinema.org/a/gwmbcxL3smcfA7pyMjSpGikFw.svg)](https://asciinema.org/a/gwmbcxL3smcfA7pyMjSpGikFw)
