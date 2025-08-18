@@ -39,7 +39,7 @@ AsciiArtify, a startup focused on developing a new software product for transfor
 ## Demonstration
 Recommended Tool: k3d  Deployment of "Hello World" Application on Kubernetes 
 
-[![k3d Demo](https://asciinema.org/a/gwmbcxL3smcfA7pyMjSpGikFw.svg)](https://asciinema.org/a/gwmbcxL3smcfA7pyMjSpGikFw)
+![k3d Demo](k3d.gif)
 
 ## Conclusion
 After practical exploration, k3d stands out as the recommended tool for AsciiArtify's PoC. Its quick cluster creation and simplicity make it suitable for initial development. However, it's crucial to consider the limited community documentation and potential scalability concerns. Additionally, Podman is introduced as a lightweight alternative to Docker, offering rootless containers and direct integration with systemd, although with a less mature ecosystem. AsciiArtify should carefully weigh the pros and cons before making a final decision.
