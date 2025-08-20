@@ -1,6 +1,0 @@
---2025-08-20 10:48:56--  https://design.google/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Fgd-prod%2Fimages%2Fa910d418-7123-4bc4-aa3b-ef7e25e74ae6.799a99c1196c2fd4.webp
-Resolving design.google (design.google)... 216.239.36.21, 216.239.38.21, 216.239.32.21, ...
-Connecting to design.google (design.google)|216.239.36.21|:443... connected.
-HTTP request sent, awaiting response... 400 Bad Request
-2025-08-20 10:48:57 ERROR 400: Bad Request.
-
