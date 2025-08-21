@@ -137,7 +137,7 @@ wB-snlrRM39D22Cx
 - У розділі `SOURCE` тип джерела залишаємо за замовчуванням `GIT`
 - Введемо `url` репозиторію, який містить маніфести для розгортання https://github.com/barabidjan/go-demo-app (це буде helm charts, або пакет маніфестів який являє собою групу об'єктів для Kubernetes та нашого додатку)
 - У полі `Path` введемо шлях до каталогу `helm`  
-![helm](.img/argo_helm.png)  
+![helm](.img/helm_argo.png)  
 - В розділі `DESTINATION` вкажемо `url` локального кластеру та `Namespace` demo після чого ArgoCD автоматично визначить параметри додатку використавши маніфести, які знаходяться в репозиторії. В разі бажання змінити значення вручну можна змінити іх значення в розділі `PARAMETERS`.  
 ![DESTINATION](.img/argo_dest.png)  
 - У розділі політика синхронізація вкажемо як додаток буде синхронізуватись з репозиторієм. Тут важливо вказати ArgoCD щоб створив новий namespace так як в helm цю функцію за замовчуванням прибрали. Ставимо галку напроти `AUTO-CREATE NAMESPACE`   
@@ -160,6 +160,7 @@ wB-snlrRM39D22Cx
 - Змінимо в файлі репозиторію https://github.com/vit-um/go-demo-app/blob/master/helm/values.yaml тип шлюзу з `NodePort` на `LoadBalancer` (останній рядок файлу)  
 
 ![out of sync](.img/argo_outofsync.png)
+
 
 
 
