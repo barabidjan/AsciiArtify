@@ -144,22 +144,38 @@ wB-snlrRM39D22Cx
 - Створюємо додаток кнопкою `CREATE`  
 ![CREATE](.img/argo_create.png)  
 
-6. Переглянемо деталі розгорнутого застосунку натиснувши на нього в списку.  
+6. Переглянемо деталі розгорнутого застосунку натиснувши на нього в списку. Доступ до застосунку можемо отриматы через [127.0.0.1:8080](https://127.0.0.1:8080/), використавши данні входу admin та пароль з пункту 4) у простому тексті.
 Графічний інтерфейс надає ієрархічне уявлення про компоненти програми, їх розгортання та поточний стан у кластері. 
 
-![NODES](.img/ArgoCD.gif)  
+![NODES](.img/argocd_demo.gif)  
 
 7. Синхронізація застосунку 
 - Для цього у вікні відомостей про програму натискаємо кнопку `SYNC` 
 - Праворуч вискакує вікно в якому потрібно обрати компоненти та режими синхронізації та натиснути кнопку `SYNCHRONIZE`  
 - Після завершення процесу можемо перевірити правильність розгортання програми, перевіривши її статус у кластері:  
 
-![SYNCHRONIZE](.img/argo_status.png)  
+![SYNCHRONIZE](.img/argocd_sync)  
 
 8. Прослідкуємо за реакцією ArgoCD на зміни в репозиторію.
-- Змінимо в файлі репозиторію https://github.com/vit-um/go-demo-app/blob/master/helm/values.yaml тип шлюзу з `NodePort` на `LoadBalancer` (останній рядок файлу)  
+- Змінимо в файлі репозиторію https://github.com/vit-um/go-demo-app/blob/master/helm/values.yaml тип шлюзу з `NodePort` на `LoadBalancer` (останній рядок файлу), то отримаємо OutOfSync та External-Ip у статсусі penging (очікування)
+```bath
+kubectl get svc -n demo
+NAME               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)                                                 AGE
+ambassador         NodePort    10.43.55.26    <none>        80:31402/TCP                                            25h
+ambassador-admin   ClusterIP   10.43.243.61   <none>        8877/TCP                                                25h
+cache              ClusterIP   10.43.95.41    <none>        6379/TCP                                                25h
+db                 ClusterIP   10.43.69.228   <none>        3306/TCP                                                25h
+demo-api           ClusterIP   10.43.71.112   <none>        80/TCP                                                  25h
+demo-ascii         ClusterIP   10.43.28.36    <none>        80/TCP                                                  25h
+demo-data          ClusterIP   10.43.254.27   <none>        80/TCP                                                  25h
+demo-front         ClusterIP   10.43.1.56     <none>        80/TCP                                                  25h
+demo-img           ClusterIP   10.43.34.183   <none>        80/TCP                                                  25h
+demo-nats          ClusterIP   None           <none>        4222/TCP,6222/TCP,8222/TCP,7777/TCP,7422/TCP,7522/TCP   25h
+```
 
-![out of sync](.img/argo_outofsync.png)
+- Тобто ми викликали процес, який отримає останню версію репозиторію гіт та порівняє її з поточним станом. Таким чином бачимо що тип сервісу для ambassador змінився з NodePort на LoadBalancer та відповідно був оновлений маніфест Kubernetes.
+
+
 
 
 
